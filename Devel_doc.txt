@@ -1,0 +1,16 @@
+
+
+generate new entity:
+php bin/console generate:doctrine:entity
+
+
+generate tables in database:
+php bin/console doctrine:schema:update --force
+
+
+generate new form:
+php bin/console generate:doctrine:form
+
+
+clear cache:
+php app/console cache:clear

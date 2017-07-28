@@ -1,0 +1,12 @@
+#prod_evol:
+#    resource: "@ProdEvolBundle/Resources/config/routing.xml"
+#    prefix:   /
+
+prod_evol:
+    resource: '@ProdEvolBundle/Controller/'
+    type: annotation
+
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation

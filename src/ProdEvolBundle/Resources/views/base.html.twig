@@ -1,0 +1,86 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" class="ie"lang="en-US">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7"  class="ie"lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8"  class="ie"lang="en-US">
+<![endif]-->
+<!--[if IE 9]>
+<html id="ie9"  class="ie"lang="en-US">
+<![endif]-->
+<!--[if gt IE 9]>
+<html class="ie"lang="en-US">
+<![endif]-->
+
+<!-- This doesn't work but i prefer to leave it here... maybe in the future the MS will support it... i hope... -->
+<!--[if IE 10]>
+<html id="ie10"  class="ie"lang="en-US">
+<![endif]-->
+
+
+<!--[if !IE]>
+<html lang="en-US">
+<![endif]-->
+
+<!-- START HEAD -->
+<head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.2, user-scalable=yes" />
+        <title>{% block title %}Welcome ProductEvolution{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" type="text/css" media="all" href="{{ asset('css/reset.css') }}" />            
+            <link rel="stylesheet" type="text/css" media="all" href="{{ asset('css/bootstrap.css') }}" />
+            <link rel="stylesheet" type="text/css" media="all" href="{{ asset('css/style.css') }}" />            
+<!-- [favicon] begin -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+<!-- [favicon] end -->            
+            <link rel="stylesheet" type="text/css" id='thickbox-css' media="all" href="{{ asset('js/thickbox/thickbox.css') }}" />            
+            <link rel="stylesheet" type="text/css" id='usquare-css-css' media="all" href="{{ asset('sliders/usquare/css/frontend/usquare_style.css') }}" />            
+            <link rel="stylesheet" type="text/css" id='google-fonts-css' media="all" href="{{ asset('http://fonts.googleapis.com/css?family=Playfair+Display%7COpen+Sans+Condensed%3A300%7COpen+Sans%7CShadows+Into+Light%7CMuli%7CDroid+Sans%7CArbutus+Slab%7CAbel&#038;ver=3.5.1') }}" />
+            <link rel="stylesheet" type="text/css" id='responsive-css' media="all" href="{{ asset('css/responsive.css') }}" />            
+            <link rel="stylesheet" type="text/css" id='custom-css' media="all" href="{{ asset('css/custom.css') }}">
+    <style type="text/css">
+            body { background-color: #ffffff; background-image: url({{ asset('images/bg-pattern.png') }}); background-repeat: repeat; background-position: top left; background-attachment: scroll; }
+    </style>
+        {% endblock %}
+
+        <script type='text/javascript' src="{{ asset('js/jquery/jquery.js') }}"></script>
+    </head>
+    <body class="home page no_js responsive stretched">
+        <div class="bg-shadow">
+            <div id="wrapper" class="container group">
+        {{ include('@ProdEvol/navigation.html.twig') }}
+                <div id="mainContainer" Class="sidebar-no">
+            {% block body %} {% endblock %}
+                </div>
+        {{ include('@ProdEvol/footer.html.twig') }}
+        {{ include('@ProdEvol/copyright.html.twig') }}
+            <div class="wrapper-border"></div>
+            </div>
+<!-- END WRAPPER -->
+        </div>
+<!-- END BG SHADOW -->
+        <script type='text/javascript' src="{{ asset('js/bootstrap.js') }}"></script>
+        <script type='text/javascript' src="{{ asset('js/underscore.min.js') }}"></script>
+        <script type='text/javascript' src="{{ asset('js/jquery/jquery.masonry.min.js') }}"></script>
+        <script type='text/javascript' src="{{ asset('js/jquery.colorbox-min.js') }}"></script>
+        <script type='text/javascript' src="{{ asset('js/jquery.easing.js') }}"></script>
+        <script type='text/javascript' src="{{ asset('js/jquery.touchSwipe.min.js') }}"></script>
+        <script type='text/javascript' src="{{ asset('js/responsive.js') }}"></script>
+        <script type='text/javascript' src="{{ asset('js/mobilemenu.js') }}"></script>
+        <script type='text/javascript' src="{{ asset('js/jquery.superfish.js') }}"></script>
+        <script type='text/javascript' src="{{ asset('js/jquery.placeholder.js') }}"></script>
+        <script type='text/javascript' src="{{ asset('js/jquery.tipsy.js') }}"></script>
+        <script type='text/javascript' src="{{ asset('js/jquery.cycle.min.js') }}"></script>
+        <script type='text/javascript' src="{{ asset('js/shortcodes.js') }}"></script>
+        <script type='text/javascript' src="{{ asset('js/jquery.custom.js') }}"></script>
+        {% block javascripts %}{% endblock %}
+        
+    </body>
+</html>
