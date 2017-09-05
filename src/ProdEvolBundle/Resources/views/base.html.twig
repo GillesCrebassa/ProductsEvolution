@@ -44,6 +44,8 @@
             <link rel="stylesheet" type="text/css" id='usquare-css-css' media="all" href="{{ asset('sliders/usquare/css/frontend/usquare_style.css') }}" />            
             <link rel="stylesheet" type="text/css" id='google-fonts-css' media="all" href="{{ asset('http://fonts.googleapis.com/css?family=Playfair+Display%7COpen+Sans+Condensed%3A300%7COpen+Sans%7CShadows+Into+Light%7CMuli%7CDroid+Sans%7CArbutus+Slab%7CAbel&#038;ver=3.5.1') }}" />
             <link rel="stylesheet" type="text/css" id='responsive-css' media="all" href="{{ asset('css/responsive.css') }}" />            
+            <link rel="stylesheet" type="text/css" id='datatable-css' media="all" href="{{ asset('css/jquery.dataTables.min.css') }}">
+<!--            <link rel="stylesheet" type="text/css" id='datatable-bootstrap-css' media="all" href="{{ asset('css/dataTables.bootstrap.min.css') }}"> -->
             <link rel="stylesheet" type="text/css" id='custom-css' media="all" href="{{ asset('css/custom.css') }}">
     <style type="text/css">
             body { background-color: #ffffff; background-image: url({{ asset('images/bg-pattern.png') }}); background-repeat: repeat; background-position: top left; background-attachment: scroll; }
@@ -79,6 +81,8 @@
         <script type='text/javascript' src="{{ asset('js/jquery.tipsy.js') }}"></script>
         <script type='text/javascript' src="{{ asset('js/jquery.cycle.min.js') }}"></script>
         <script type='text/javascript' src="{{ asset('js/shortcodes.js') }}"></script>
+        <script type='text/javascript' src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
+<!--        <script type='text/javascript' src="{{ asset('js/dataTables.bootstrap.min.js') }}"></script> -->
         <script type='text/javascript' src="{{ asset('js/jquery.custom.js') }}"></script>
         {% block javascripts %}{% endblock %}
         

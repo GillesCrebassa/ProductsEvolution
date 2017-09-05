@@ -22,5 +22,29 @@ class ProductsController extends Controller
     {
         return $this->render('ProdEvolBundle:Products:list.html.twig');
     }
+
+    /**
+     * @Route("/Products/add/", name="products_add"))
+     */
+    public function AddAction()
+    {
+        return $this->render('ProdEvolBundle:Products:add.html.twig');
+    }
+    
+     /**
+     * @Route("/Products/view/", name="products_view"))
+     */
+    public function viewAction()
+    {
+        return $this->render('ProdEvolBundle:Products:view.html.twig');
+    }
+   
+    /**
+     * @Route("/Products/update/", name="products_update"))
+     */
+    public function updateAction()
+    {
+        return $this->render('ProdEvolBundle:Products:update.html.twig');
+    }
     
 }
