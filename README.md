@@ -38,3 +38,12 @@ configure Apache 2
 
 
 # ProductsEvolution
+php bin/console doctrine:schema:update --force
+
+
+
+#test after onetomany/manytoone
+#for add setter/getter
+php bin/console doctrine:generate:entities ProdEvolBundle:Product
+#for create form
+php bin/console doctrine:generate:form ProdEvolBundle:Product

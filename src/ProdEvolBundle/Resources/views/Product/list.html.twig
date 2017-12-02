@@ -1,0 +1,56 @@
+{% extends '@ProdEvol/base.html.twig' %}
+
+{% block body %}
+List Products!
+</br>
+    product: 
+
+<table id="summary" class="display" cellspacing="0" width="100%">
+    <thead>
+           <tr>
+                <th>Name</th>
+                <th>TypeId</th>
+                <th>description</th>
+                <th>Supplier</th>
+                <th>site</th>
+                <th>media</th>
+                <th>remarks</th>
+            </tr>
+
+    </thead>
+       <!--<tfoot> -->
+       <tbody>
+{% for product in products %}            
+            <tr>
+                <th>{{product.name}}</th>
+                <th>{{product.typeId}}</th>
+                <th>{{product.description}}</th>
+                <th>{{product.supplier}}</th>
+                <th>{{product.site}}</th>
+                <th>{{product.media}}</th>
+                <th>{{product.remarks}}</th>
+            </tr>
+{% endfor %}
+       </tbody>
+        <!-- </tfoot>    -->
+</table>
+        
+
+{% endblock %}
+
+
+{% block javascripts %}
+    <script type='text/javascript'>
+    jQuery( document ).ready( function( $ ) {
+    jQuery('#summary').DataTable({
+        "paging":   true,
+        "ordering": true,
+        "info":     false,
+        "searching": true
+    });
+    } );
+    </script>
+        
+        
+
+{% endblock %}

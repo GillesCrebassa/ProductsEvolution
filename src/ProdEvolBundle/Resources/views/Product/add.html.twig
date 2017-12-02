@@ -1,0 +1,30 @@
+{% extends '@ProdEvol/base.html.twig' %}
+{% form_theme form with ['@ProdEvol/bootstrap_3_layout.html.twig','@ProdEvol/form_div_layout.html.twig'] %}
+
+{% block body %}
+<div class="col-sm-12">
+{{ form_start(form) }}
+    <div class="col-sm-4">
+    </div>
+    <div class="col-sm-4">
+{{ form_row(form.name) }}
+{{ form_row(form.description) }}
+{{ form_row(form.supplier) }}
+{{ form_row(form.site) }}
+{{ form_row(form.media) }}
+{{ form_row(form.typeId) }}
+{{ form_row(form.remarks) }}
+
+    <button type="submit">Add !</button>
+    <button type="reset">Cancel !</button>
+        </div>
+    <div class="col-sm-4">
+    </div>
+{{ form_end(form) }}
+        </div>
+{% endblock %}
+
+
+{% block javascripts %}
+
+{% endblock %}

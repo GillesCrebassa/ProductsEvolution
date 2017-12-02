@@ -5,12 +5,12 @@ namespace ProdEvolBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Products
+ * Product
  *
- * @ORM\Table(name="products")
- * @ORM\Entity(repositoryClass="ProdEvolBundle\Repository\ProductsRepository")
+ * @ORM\Table(name="product")
+ * @ORM\Entity(repositoryClass="ProdEvolBundle\Repository\ProductRepository")
  */
-class Products
+class Product
 {
     /**
      * @var int
@@ -52,25 +52,34 @@ class Products
     /**
      * @var string
      *
-     * @ORM\Column(name="media", type="string", length=30)
+     * @ORM\Column(name="media", type="string", length=30,nullable=true)
      */
     private $media;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="typeId", type="integer")
+     * @ORM\Column(name="typeId", type="integer", nullable=true)
      */
     private $typeId;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="remarks", type="string", length=255)
+     * @ORM\Column(name="remarks", type="string", length=255,nullable=true)
      */
     private $remarks;
 
-
+    /**
+     * @ORM\OneToMany(targetEntity="ProdEvolBundle\Entity\Release", mappedBy="product")
+     */
+    private $releases;
+    
+    public function __construct() {
+        $this->releases = new ArrayCollection();
+    }
+    
+    
     /**
      * Get id
      *
@@ -86,7 +95,7 @@ class Products
      *
      * @param string $name
      *
-     * @return Products
+     * @return Product
      */
     public function setName($name)
     {
@@ -110,7 +119,7 @@ class Products
      *
      * @param string $description
      *
-     * @return Products
+     * @return Product
      */
     public function setDescription($description)
     {
@@ -134,7 +143,7 @@ class Products
      *
      * @param string $supplier
      *
-     * @return Products
+     * @return Product
      */
     public function setSupplier($supplier)
     {
@@ -158,7 +167,7 @@ class Products
      *
      * @param string $site
      *
-     * @return Products
+     * @return Product
      */
     public function setSite($site)
     {
@@ -182,7 +191,7 @@ class Products
      *
      * @param string $media
      *
-     * @return Products
+     * @return Product
      */
     public function setMedia($media)
     {
@@ -206,7 +215,7 @@ class Products
      *
      * @param integer $typeId
      *
-     * @return Products
+     * @return Product
      */
     public function setTypeId($typeId)
     {
@@ -230,7 +239,7 @@ class Products
      *
      * @param string $remarks
      *
-     * @return Products
+     * @return Product
      */
     public function setRemarks($remarks)
     {
@@ -248,5 +257,42 @@ class Products
     {
         return $this->remarks;
     }
-}
+    
+    
+    
+    
 
+    /**
+     * Add release
+     *
+     * @param \ProdEvolBundle\Entity\Release $release
+     *
+     * @return Product
+     */
+    public function addRelease(\ProdEvolBundle\Entity\Release $release)
+    {
+        $this->releases[] = $release;
+
+        return $this;
+    }
+
+    /**
+     * Remove release
+     *
+     * @param \ProdEvolBundle\Entity\Release $release
+     */
+    public function removeRelease(\ProdEvolBundle\Entity\Release $release)
+    {
+        $this->releases->removeElement($release);
+    }
+
+    /**
+     * Get releases
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getReleases()
+    {
+        return $this->releases;
+    }
+}

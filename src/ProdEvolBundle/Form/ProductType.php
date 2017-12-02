@@ -6,7 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class ProductsType extends AbstractType
+class ProductType extends AbstractType
 {
     /**
      * {@inheritdoc}
@@ -22,7 +22,7 @@ class ProductsType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'ProdEvolBundle\Entity\Products'
+            'data_class' => 'ProdEvolBundle\Entity\Product'
         ));
     }
 
@@ -31,7 +31,7 @@ class ProductsType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'prodevolbundle_products';
+        return 'prodevolbundle_product';
     }
 
 

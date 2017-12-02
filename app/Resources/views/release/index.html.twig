@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Releases list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Entrydate</th>
+                <th>Publicationdate</th>
+                <th>Expirationdate</th>
+                <th>Licenseinfo</th>
+                <th>Remarks</th>
+                <th>Reference</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for release in releases %}
+            <tr>
+                <td><a href="{{ path('release_show', { 'id': release.id }) }}">{{ release.id }}</a></td>
+                <td>{{ release.name }}</td>
+                <td>{% if release.entryDate %}{{ release.entryDate|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if release.publicationDate %}{{ release.publicationDate|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if release.expirationDate %}{{ release.expirationDate|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ release.licenseInfo }}</td>
+                <td>{{ release.remarks }}</td>
+                <td>{{ release.reference }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('release_show', { 'id': release.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('release_edit', { 'id': release.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('release_new') }}">Create a new release</a>
+        </li>
+    </ul>
+{% endblock %}
